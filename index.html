@@ -6,6 +6,8 @@
   <title>Главная — Bootstrap Shop</title>
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
+  <!-- Самостоятельное дополнение: дополнительные стили -->
+  <link rel="stylesheet" href="css/extra.css">
 </head>
 <body>
 <header class="bg-primary text-white py-4">
@@ -100,7 +102,11 @@
         </div>
 
         <div class="col-12 col-lg-6">
-          <img src="images/product.svg" class="img-fluid rounded border" alt="Учебное изображение товара" width="600" height="400">
+          <div class="placeholder-box p-5 bg-light border rounded text-center">
+            <p class="mb-0 text-muted">
+              Здесь может быть изображение, баннер или промо-блок.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -129,9 +135,9 @@
 
     <div class="col-12 col-md-4">
       <div class="p-4 border rounded h-100 bg-white">
-        <h3 class="h5">Заявка на товар</h3>
+        <h3 class="h5">Готовая база</h3>
         <p class="mb-0 text-muted">
-          Выбранный товар подставляется в форму, а поля проверяются в браузере.
+          Проект подготовлен к добавлению карточек, форм и модальных окон.
         </p>
       </div>
     </div>
@@ -139,7 +145,7 @@
 </section>
 
 <section class="container my-5" id="popular">
-  <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 mb-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
     <h2 class="mb-0">Популярные товары</h2>
     <a class="btn btn-outline-primary" href="catalog.html">
       Все товары
@@ -148,42 +154,42 @@
 
   <div class="row g-4">
     <div class="col-12 col-md-6 col-lg-4">
-      <div class="card product-card h-100 p-4">
+      <div class="border rounded h-100 p-4">
         <span class="badge bg-success mb-3">Новинка</span>
         <h3 class="h5">Товар 1</h3>
         <p class="text-muted">
           Краткое описание учебного товара.
         </p>
         <p class="fw-bold mb-3">1000 руб.</p>
-        <a class="btn btn-primary" href="product.html?product=product-1">
+        <a class="btn btn-primary" href="product.html">
           Подробнее
         </a>
       </div>
     </div>
 
     <div class="col-12 col-md-6 col-lg-4">
-      <div class="card product-card h-100 p-4">
+      <div class="border rounded h-100 p-4">
         <span class="badge bg-warning text-dark mb-3">Хит</span>
         <h3 class="h5">Товар 2</h3>
         <p class="text-muted">
           Краткое описание учебного товара.
         </p>
         <p class="fw-bold mb-3">1500 руб.</p>
-        <a class="btn btn-primary" href="product.html?product=product-2">
+        <a class="btn btn-primary" href="product.html">
           Подробнее
         </a>
       </div>
     </div>
 
     <div class="col-12 col-md-6 col-lg-4">
-      <div class="card product-card h-100 p-4">
+      <div class="border rounded h-100 p-4">
         <span class="badge bg-danger mb-3">Скидка</span>
         <h3 class="h5">Товар 3</h3>
         <p class="text-muted">
           Краткое описание учебного товара.
         </p>
         <p class="fw-bold mb-3">2000 руб.</p>
-        <a class="btn btn-primary" href="product.html?product=product-3">
+        <a class="btn btn-primary" href="product.html">
           Подробнее
         </a>
       </div>
@@ -191,23 +197,25 @@
   </div>
 </section>
 
-<section class="container my-5" aria-labelledby="order-steps-title">
-  <h2 id="order-steps-title" class="h3 mb-4">Как оформить заявку</h2>
+<!-- Самостоятельное дополнение: порядок оформления заявки -->
+<section class="container my-5" id="order-steps">
+  <h2 class="h3 mb-4">Как оформить заявку</h2>
   <div class="row g-4">
     <div class="col-12 col-md-4">
       <h3 class="h5"><span class="badge bg-primary me-2">1</span>Выберите товар</h3>
-      <p class="text-muted mb-0">Найдите товар в каталоге с помощью поиска и фильтра по цене.</p>
+      <p class="text-muted mb-0">Посмотрите цены в каталоге и характеристики на странице товара.</p>
     </div>
     <div class="col-12 col-md-4">
       <h3 class="h5"><span class="badge bg-primary me-2">2</span>Заполните форму</h3>
-      <p class="text-muted mb-0">Нажмите «Заказать» в каталоге или откройте полную форму заявки.</p>
+      <p class="text-muted mb-0">Откройте страницу заявки или нажмите «Заказать» в каталоге.</p>
     </div>
     <div class="col-12 col-md-4">
-      <h3 class="h5"><span class="badge bg-primary me-2">3</span>Проверьте данные</h3>
-      <p class="text-muted mb-0">После заполнения появится уведомление. Реальная отправка в учебной версии не выполняется.</p>
+      <h3 class="h5"><span class="badge bg-primary me-2">3</span>Проверьте результат</h3>
+      <p class="text-muted mb-0">После заполнения появится уведомление. В учебной версии данные не отправляются на сервер.</p>
     </div>
   </div>
 </section>
+<!-- Конец самостоятельного дополнения -->
 </main>
 
 <footer class="bg-dark text-white py-4 mt-5">
@@ -232,6 +240,5 @@
 </footer>
 
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>
