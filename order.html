@@ -6,6 +6,8 @@
   <title>Заявка — Bootstrap Shop</title>
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
+  <!-- Самостоятельное дополнение: дополнительные стили -->
+  <link rel="stylesheet" href="css/extra.css">
 </head>
 <body class="bg-light">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -73,34 +75,33 @@
 
         <div class="card-body">
           <div class="alert alert-info" role="alert">
-            Учебная форма: данные проверяются в браузере без отправки на сервер. Поля со звёздочкой обязательны.
+            Заполните форму. Поля со звёздочкой являются обязательными.
           </div>
 
-          <form id="order-form" data-order-form>
+          <form>
             <div class="row g-3">
               <div class="col-12 col-md-6">
                 <label for="order-name" class="form-label">Имя *</label>
-                <input id="order-name" name="name" type="text" autocomplete="given-name" class="form-control" required>
+                <input id="order-name" name="name" type="text" class="form-control" required>
               </div>
 
               <div class="col-12 col-md-6">
                 <label for="order-email" class="form-label">E-mail *</label>
-                <input id="order-email" name="email" type="email" autocomplete="email" class="form-control" required>
+                <input id="order-email" name="email" type="email" class="form-control" required>
               </div>
 
               <div class="col-12 col-md-6">
-                <label for="order-phone" class="form-label">Телефон *</label>
+                <label for="order-phone" class="form-label">Телефон</label>
                 <div class="input-group">
                   <span class="input-group-text">+7</span>
-                  <input id="order-phone" name="phone" type="tel" class="form-control" placeholder="9000000000" pattern="[0-9]{10}" title="Введите 10 цифр без +7" aria-describedby="order-phone-hint" autocomplete="tel-national" required>
+                  <input id="order-phone" name="phone" type="tel" class="form-control" placeholder="900 000-00-00">
                 </div>
-                <div id="order-phone-hint" class="form-text">10 цифр без +7, пробелов и дефисов.</div>
               </div>
 
               <div class="col-12 col-md-6">
-                <label for="order-product" class="form-label">Товар *</label>
-                <select id="order-product" name="product" class="form-select" required>
-                  <option value="" selected>Выберите товар</option>
+                <label for="order-product" class="form-label">Товар</label>
+                <select id="order-product" name="product" class="form-select">
+                  <option selected>Выберите товар</option>
                   <option value="product-1">Товар 1</option>
                   <option value="product-2">Товар 2</option>
                   <option value="product-3">Товар 3</option>
@@ -121,7 +122,7 @@
                 </div>
               </div>
 
-              <div class="col-12 d-flex flex-wrap gap-2">
+              <div class="col-12 d-flex gap-2">
                 <button class="btn btn-primary" type="submit">
                   Отправить заявку
                 </button>
@@ -137,18 +138,22 @@
   </div>
 </main>
 
-
-  <div class="toast-container position-fixed bottom-0 end-0 p-3" aria-live="polite" aria-atomic="true">
-    <div id="orderToast" class="toast" role="status" aria-live="polite" aria-atomic="true" data-bs-autohide="false">
-      <div class="toast-header">
-        <strong class="me-auto">Проверка заявки</strong>
-        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть уведомление"></button>
-      </div>
-      <div class="toast-body" id="order-toast-message"></div>
-    </div>
-  </div>
-
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js"></script>
+
+<!-- Самостоятельное дополнение: уведомление о заполнении учебной формы -->
+<p class="container text-muted small">Формы учебные: данные проверяются в браузере и не отправляются на сервер.</p>
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="orderToast" class="toast" role="status" aria-live="polite" aria-atomic="true" data-bs-autohide="false">
+    <div class="toast-header">
+      <strong class="me-auto">Учебная заявка</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть уведомление"></button>
+    </div>
+    <div class="toast-body">Форма заполнена. Это учебный пример: данные на сервер не отправлены.</div>
+  </div>
+</div>
+<!-- Конец самостоятельного дополнения -->
+
+<!-- Самостоятельное дополнение: обработка учебной формы -->
+<script src="js/extra.js"></script>
 </body>
 </html>

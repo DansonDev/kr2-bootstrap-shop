@@ -6,6 +6,8 @@
   <title>Товар 1 — Bootstrap Shop</title>
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
+  <!-- Самостоятельное дополнение: дополнительные стили -->
+  <link rel="stylesheet" href="css/extra.css">
 </head>
 <body class="bg-light">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -68,28 +70,30 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
       <li class="breadcrumb-item"><a href="catalog.html">Каталог</a></li>
-      <li class="breadcrumb-item active" aria-current="page" data-product-name>Товар 1</li>
+      <li class="breadcrumb-item active" aria-current="page">Товар 1</li>
     </ol>
   </nav>
 
   <div class="row g-4">
     <div class="col-12 col-lg-6">
       <div class="card shadow-sm">
-        <img src="images/product.svg" class="img-fluid rounded" alt="Учебное изображение товара 1" id="product-image" width="600" height="400">
+        <div class="placeholder-image bg-light border rounded d-flex align-items-center justify-content-center">
+          <span class="text-muted">Изображение товара</span>
+        </div>
       </div>
     </div>
 
     <div class="col-12 col-lg-6">
-      <span class="badge bg-success mb-3" id="product-badge">Новинка</span>
-      <h1 class="h2" data-product-name>Товар 1</h1>
+      <span class="badge bg-success mb-3">Новинка</span>
+      <h1 class="h2">Товар 1</h1>
       <p class="lead text-muted">
         Подробное описание учебного товара для страницы карточки.
       </p>
 
-      <p class="fs-3 fw-bold" data-product-price>1000 руб.</p>
+      <p class="fs-3 fw-bold">1000 руб.</p>
 
-      <div class="d-flex flex-column flex-sm-row gap-2 mb-4">
-        <a class="btn btn-primary btn-lg" id="product-order-link" href="order.html?product=product-1">
+      <div class="d-flex gap-2 mb-4">
+        <a class="btn btn-primary btn-lg" href="order.html">
           Оформить заявку
         </a>
         <a class="btn btn-outline-secondary btn-lg" href="catalog.html">
@@ -115,7 +119,7 @@
           </tr>
           <tr>
             <th scope="row">Цена</th>
-            <td data-product-price>1000 руб.</td>
+            <td>1000 руб.</td>
           </tr>
           <tr>
             <th scope="row">Наличие</th>
@@ -178,9 +182,31 @@
     </div>
   </div>
 </section>
+
+<!-- Самостоятельное дополнение: вкладки с подсказками для покупателя -->
+<section class="container my-5" id="order-info">
+  <h2 class="h4 mb-3">Информация для заявки</h2>
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="choice-tab" data-bs-toggle="tab" data-bs-target="#choice-info" type="button" role="tab" aria-controls="choice-info" aria-selected="true">Выбор товара</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="request-tab" data-bs-toggle="tab" data-bs-target="#request-info" type="button" role="tab" aria-controls="request-info" aria-selected="false">Заявка</button>
+    </li>
+  </ul>
+  <div class="tab-content border border-top-0 rounded-bottom bg-white p-3">
+    <div class="tab-pane show active" id="choice-info" role="tabpanel" aria-labelledby="choice-tab" tabindex="0">
+      <p class="mb-0">Перед заявкой сравните цены в каталоге и посмотрите характеристики в таблице выше.</p>
+    </div>
+    <div class="tab-pane" id="request-info" role="tabpanel" aria-labelledby="request-tab" tabindex="0">
+      <p>На странице заявки укажите имя и e-mail, выберите товар и подтвердите согласие на обработку данных.</p>
+      <a class="btn btn-primary" href="order.html">Перейти к заявке</a>
+    </div>
+  </div>
+</section>
+<!-- Конец самостоятельного дополнения -->
 </main>
 
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>
